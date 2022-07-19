@@ -30,7 +30,7 @@ else:
     exit()
 
 url = "https://youtube.com" # Aqui deve ser inserido a URL a ser encurtada.
-shorten_res = requests.post("https://api-ssl.bitly.com/v4/shorten", json={"group_guid": guid, "long_url": url}, headers=headers) # Faz o POST request para obter a URL inserida abreviada.
+shorten_res = requests.post("https://api-ssl.bitly.com/v4/shorten", json={"group_guid": guid, "long_url": url}, headers=headers) # Faz o POST request para obter a URL inserida encurtada.
 
 if shorten_res.status_code == 200: # Se a resposta for OK, recebe a URL encurtada.
     link = shorten_res.json().get("link")
